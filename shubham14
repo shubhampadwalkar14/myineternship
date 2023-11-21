@@ -1,0 +1,35 @@
+def convert_units(value, from_unit, to_unit):
+    # Length conversions
+    if from_unit == "meters" and to_unit == "feet":
+        return value * 3.28084
+    elif from_unit == "feet" and to_unit == "meters":
+        return value / 3.28084
+
+    # Weight conversions
+    elif from_unit == "kilograms" and to_unit == "pounds":
+        return value * 2.20462
+    elif from_unit == "pounds" and to_unit == "kilograms":
+        return value / 2.20462
+
+    # Temperature conversions (Celsius to Fahrenheit and vice versa)
+    elif from_unit == "celsius" and to_unit == "fahrenheit":
+        return (value * 9/5) + 32
+    elif from_unit == "fahrenheit" and to_unit == "celsius":
+        return (value - 32) * 5/9
+
+    # If units are not supported
+    else:
+        return "Conversion not supported for the given units."
+
+# Example usage:
+length_value = 10
+converted_length = convert_units(length_value, "meters", "feet")
+print(f"{length_value} meters is equal to {converted_length:.2f} feet.")
+
+weight_value = 50
+converted_weight = convert_units(weight_value, "kilograms", "pounds")
+print(f"{weight_value} kilograms is equal to {converted_weight:.2f} pounds.")
+
+temperature_value = 25
+converted_temperature = convert_units(temperature_value, "celsius", "fahrenheit")
+print(f"{temperature_value} Celsius is equal to {converted_temperature:.2f} Fahrenheit.")
